@@ -1,0 +1,6 @@
+{
+  "name": "Lumina Digital Agency",
+  "description": "A futuristic 3D agency website with a premium dark aesthetic, interactive Three.js hero, and full CMS dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

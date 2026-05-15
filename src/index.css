@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --primary: #ea580c;
+  --secondary: #2563eb;
+}
+
+@layer base {
+  * {
+    @apply border-white/5 transition-colors duration-300;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#050505] text-white;
+    background-image: radial-gradient(circle at center, var(--primary), transparent 100%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+
+  html.light body {
+    @apply bg-white text-neutral-950;
+    background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.02), transparent 100%);
+  }
+
+  html.light * {
+    @apply border-black/10;
+  }
+
+  html.light ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300;
+  }
+
+  html.light .glass {
+    @apply bg-white/70 border-black/10 backdrop-blur-3xl shadow-xl shadow-black/[0.03];
+  }
+  
+  html.light .text-white\/40 {
+    @apply text-neutral-500;
+  }
+
+  html.light .text-white\/20 {
+    @apply text-neutral-200;
+  }
+
+  html.light .bg-white\/5 {
+    @apply bg-neutral-100;
+  }
+
+  html.light .bg-white\/10 {
+    @apply bg-neutral-200;
+  }
+
+  html.light .bg-black\/60 {
+    @apply bg-white/70;
+  }
+}
+
+.text-white-shadow {
+  text-shadow: 0 0 40px rgba(255,255,255,0.2);
+}
+
+html.light .text-white-shadow {
+  text-shadow: 0 0 40px rgba(0,0,0,0.1);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}

@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "projects": {
+      "title": "Project",
+      "description": "A featured portfolio project.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "techStack": { "type": "array" },
+        "liveUrl": { "type": "string" },
+        "githubUrl": { "type": "string" },
+        "category": { "type": "string" },
+        "featured": { "type": "boolean" },
+        "order": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "thumbnail", "techStack"]
+    },
+    "services": {
+      "title": "Service",
+      "description": "A service offered by the agency.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "specs": { "type": "array" },
+        "order": { "type": "number" }
+      },
+      "required": ["title", "description"]
+    },
+    "testimonials": {
+      "title": "Testimonial",
+      "description": "Client feedback and reviews.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "company": { "type": "string" },
+        "content": { "type": "string" },
+        "avatar": { "type": "string" },
+        "rating": { "type": "number" }
+      },
+      "required": ["name", "content"]
+    },
+    "stats": {
+      "title": "Statistic",
+      "description": "Growth and achievement numbers.",
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "value": { "type": "string" },
+        "suffix": { "type": "string" },
+        "order": { "type": "number" }
+      }
+    },
+    "siteConfig": {
+      "title": "Site Configuration",
+      "description": "Global strings and settings for the website.",
+      "type": "object",
+      "properties": {
+        "heroTitle": { "type": "string" },
+        "heroSubtitle": { "type": "string" },
+        "tagline": { "type": "string" },
+        "email": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "socials": { "type": "object" }
+      }
+    }
+  },
+  "firestore": {
+    "projects": {
+      "schema": "projects",
+      "description": "Featured portfolio items."
+    },
+    "services": {
+      "schema": "services",
+      "description": "Service menu items."
+    },
+    "testimonials": {
+      "schema": "testimonials",
+      "description": "Customer feedback catalog."
+    },
+    "stats": {
+      "schema": "stats",
+      "description": "Dashboard achievement metrics."
+    },
+    "config": {
+      "schema": "siteConfig",
+      "description": "Global singleton configuration."
+    }
+  }
+}
